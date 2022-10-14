@@ -1,7 +1,5 @@
 import React from "react";
-import Header from "./component/rota/home/header";
-import Main from "./component/rota/home/main";
-import Footer from "./component/rota/home/footer";
+import Home from "./component/rota/home";
 import Perfil from "./component/rota/perfil";
 import Works from "./component/rota/works";
 
@@ -9,9 +7,7 @@ import Works from "./component/rota/works";
 function App() {
   return (
     <>
-    <Header/>
-    <Main/>
-    <Footer/>
+    <Home/>
     <Perfil/>
     <Works/>
     </>
