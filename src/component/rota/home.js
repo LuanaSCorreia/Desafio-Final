@@ -1,70 +1,75 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Perfil from "./perfil";
-import Works from "./works";
-import Luana from "../../Foto/LuanaCorreia.jpeg";
+import Luana from "../../Foto/LuanaCorreia.png";
 import Background from "../../Foto/Background.webp";
 
-const Menu = styled.section`
-display: flex;
-justify-content: flex-end;
 
-nav{
-  width: 40%;
-display: flex;
-}
-
-ul{
-    width: 100%;
- height: 10vh;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-font-style: oblique;
-font-size: 2vw;
-}
-
-`
 const Section = styled.section`
 background-image: url(${Background});
 background-repeat: no-repeat;
 background-size: 100%;
 width: 100%;
-height: 100vh;
-margin: 0;
+height: 90vh;
+display: flex;
+justify-content: space-around;
+align-items: center;
+div{
+  width: 30%;
+}
+h1{
+    border-right: 2px solid;
+    animation:pisca 500ms steps(40) infinite normal, digitando 4s steps(40) .1s normal both;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2vw;
+  }
+
+p{
+  border-right: 2px solid;
+    animation:pisca 500ms steps(40) infinite normal, digitando 5s steps(40) 5s normal both;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.6vw;
+}
+
+@keyframes digitando{
+    from{
+        width: 0;
+    }
+    to{
+        width: 13.7em;
+
+    }
+}
+
+@keyframes pisca{
+    from{
+        border-right-color: black;
+    }
+    to{
+        border-right-color:transparent ;
+    }
+}
 `
 const Foto = styled.img`
-width: 16vw;
-border-radius:65%  ;
-position: relative;
-left: 16%;
-top: 12%;
+width: 21vw;
+
 `
 function Home() {
   return (
-    <BrowserRouter>
+
     <Section>
-    <Menu>
-  <nav>
-      <ul>
-          <Link to ="/"><li>Home</li></Link>
-          <Link to ="/perfil"><li>Sobre</li></Link>
-          <Link to ="/work"><li>Trabalhos</li></Link>
-         <li>Contatos</li>
-      </ul>
-  </nav>
-    </Menu>
-   <Foto src={Luana}/>
+   <Foto src={Luana} alt="Luana"/>
+   <div>
+     <h1>Olá! Sou Luana Correia.</h1>
+     <p>Bem Vindos ao meu site!</p>
+   </div>
     </Section>
 
-    <Routes>
-      <Route path="/"/>
-       <Route path="/perfil" element={<Perfil/>}/>
-       <Route path="/works" element={<Works/>}/>
-      </Routes>
-    </BrowserRouter>
+  
+   
   );
 }
 

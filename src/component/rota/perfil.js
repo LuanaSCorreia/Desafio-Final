@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-//import Foto from....
+import Luana from "../../Foto/Luana.jpg";
+import Casal from "../../Foto/Casal.jpg";
+import Guia from "../../Foto/Guia.jpg";
+import EF from "../../Foto/EdFisica.jpg";
+
 
 const Section = styled.section`
 background-color: aliceblue;
@@ -10,55 +14,49 @@ const Div = styled.div`
 border: solid red;
 display: flex;
 align-items: center;
-width: 50%;
-height: 13vh;
-`
-const Divisao = styled.div`
-border: solid purple;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-height: 13vh;
+justify-content: space-around;
+font-size: 1.2vw;
+h2{
+  border: solid;
+  width: 60%;
+}
+img{
+  width: 10vw;
+  height: 10vw;
+  border: solid;
+}
 `
 
 function Perfil() {
   return (
     <Section>
-<Div>
-  <img scr=""/>
-  <h2>Estudante dev</h2>
-  <p></p>
+      <Div>
+      <img scr= {Luana}/>
+  <h2>Atualmente tenho 23 anos, sou moradora do Rio de Janeiro. Sou uma pessoa ....</h2>
+      </Div>
+
+      <Div>
+  <img scr={Casal}/>
+  <h2>Sou casada e mãe de gata.</h2>
 </Div>
 
-<Divisao>
-  <img scr=""/>
-  <h2> formada em ed fisica</h2>
-  <p></p>
-</Divisao>
-
 <Div>
-  <img scr=""/>
-  <h2>casada</h2>
-  <p></p>
+  <img scr={Guia}/>
+  <h2>Iniciei minha vontade de aprender no ensino médio, com o técnico em guia de turismo</h2>
 </Div>
 
-<Divisao>
-  <img scr=""/>
-  <h2>mae de pet</h2>
-  <p></p>
-</Divisao>
+<Div>
+  <img scr={EF}/>
+  <h2>Me formei no bacharel em Educação Física, voltada ao desenvolvimento motor, saúde
+     e bem-estar. Atuo como professora de dança e ginastica rítmica infantil.</h2>
+</Div>
 
 <Div>
   <img scr=""/>
-  <h2>formada em guia de tur</h2>
-  <p></p>
+  <h2>Agora estudo web desenvolvimento, front-end em busca de consciliar minha formação 
+    inicial em saúde com a tecnologia.</h2>
 </Div>
 
-<Divisao>
-  <img scr=""/>
-  <h2>prof de dança</h2>
-  <p></p>
-</Divisao>
     </Section>
   );
 }

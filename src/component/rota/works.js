@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function App() {
+function Work() {
   return (
     <>
    <h1> este são meus trabalhos</h1>
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default Work;
