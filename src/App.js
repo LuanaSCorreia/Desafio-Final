@@ -1,13 +1,10 @@
 import React from "react";
-import Header from "./component/Header";
-//import Perfil from "./component/rota/perfil";
-//import Works from "./component/rota/works";
-
+import Menu from "./component/Menu";
 
 function App() {
   return (
     <>
-    <Header/>
+    <Menu/>
     </>
   );
 }
