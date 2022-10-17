@@ -52,7 +52,7 @@ function Header() {
       <ul>
           <Link to ="/"> <li>Home</li> </Link>
           <Link to ="/perfil"> <li>Sobre</li> </Link>
-          <Link to ="/work"> <li>Trabalhos</li> </Link>
+          <Link to ="/works"> <li>Trabalhos</li> </Link>
           <Link to =""> <li>ODS</li> </Link>
           <Link to ="/contato"> <li>Contatos</li> </Link> 
       </ul>
