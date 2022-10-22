@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 import Modal from "../modal";
@@ -11,6 +11,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
+width: 90%;
 height: 70vh;
 
 div{
@@ -20,8 +21,12 @@ width: 50vw;
 }
 
 img{
-    width: 4vw;
-    gap: 5vw;
+width: 4vw;
+gap: 5vw;
+    &:hover{
+cursor: pointer;
+width: 4.5vw;
+}
 }
 
 button{
@@ -53,15 +58,15 @@ input{
 height: 2.4vw;
 }
 `
-function Contato(){
-    const[remetente,setRemetente]= useState('');
-    const[remetenteEmail,setRemetenteEmail]= useState('');
-    const[mensagem, setMensagem]= useState('');
+function Contato() {
+    const [remetente, setRemetente] = useState('');
+    const [remetenteEmail, setRemetenteEmail] = useState('');
+    const [mensagem, setMensagem] = useState('');
     const [isModalVisible, setIsModalVisible] = useState(false);
 
 
-    const SendEmail = (e) =>{
-        if(remetente !== ""){
+    const SendEmail = (e) => {
+        if (remetente !== "") {
             setMensagem("");
             setRemetente("");
             setRemetenteEmail("");
@@ -75,48 +80,48 @@ function Contato(){
             mensagem: mensagem
         };
 
-        emailjs.send('service_rsbzzxb','template_o0n68br', templateParams, 'Ahv_yXpnxTeEz3AA7')
-        .then(function(response){
-            alert("Parabéns,sua mensagem foi enviada!", response.status, response.text)
-        }, function(error){
-            alert('Desculpe, tente de novo mais tarde.', error)
-        });
+        emailjs.send('service_rsbzzxb', 'template_o0n68br', templateParams, 'Ahv_yXpnxTeEz3AA7')
+            .then(function (response) {
+                alert("Parabéns,sua mensagem foi enviada!", response.status, response.text)
+            }, function (error) {
+                alert('Desculpe, tente de novo mais tarde.', error)
+            });
         console.log(templateParams)
     }
-    return(
+    return (
         <Conteiner>
-<div>
+            <div>
 
-         <a href="https://wa.me/5521970809667?text=Ol%C3%A1,%20tudo%20bem?%20Obrigada%20por%20entrar%20em%20contato.%20Daqui%20a%20pouco%20respondo.">
-            <img src={WPP}/></a>
+                <a href="https://wa.me/5521970809667?text=Ol%C3%A1,%20tudo%20bem?%20Obrigada%20por%20entrar%20em%20contato.%20Daqui%20a%20pouco%20respondo.">
+                    <img src={WPP} /></a>
 
-        <a href="https://www.linkedin.com/feed/?trk=sem-ga_campid%3D12619604099_asid%3D122510712920_crid%3D509739556235_kw%3Dlinked_d%3Dc_tid%3Dkwd-103941963_n%3Dg_mt%3De_geo%3D1001655_slid%3D"> 
-            <img src={Linkedin}/> </a>
+                <a href="https://www.linkedin.com/feed/?trk=sem-ga_campid%3D12619604099_asid%3D122510712920_crid%3D509739556235_kw%3Dlinked_d%3Dc_tid%3Dkwd-103941963_n%3Dg_mt%3De_geo%3D1001655_slid%3D">
+                    <img src={Linkedin} /> </a>
 
-        <a href="https://github.com/LuanaSCorreia">
-            <img src={Github}/> </a>
+                <a href="https://github.com/LuanaSCorreia">
+                    <img src={Github} /> </a>
 
             </div>
 
-        <button onClick={() => setIsModalVisible(true)}> Envie sua mensagem. </button>
-          {isModalVisible ?(
-            <Modal onClose={() => setIsModalVisible(false)}>
-              <Mensagem 
-              onSubmit={SendEmail}>
-            <input type='text' name="remetente" placeholder="Nome"
-            onChange={(e) => {setRemetente(e.target.value);}} value={remetente}/>
-            <input type='email' placeholder="Email" name="remetenteEmail" 
-            onChange={(e)=>{setRemetenteEmail(e.target.value);}} value={remetenteEmail}/>
-            <textarea rows="3" cols="40" name="mensagem" placeholder="Escreva sua mensagem"
-            onChange={(e)=> {setMensagem(e.target.value);}} value={mensagem}/>
-            <input 
-            type='submit' value="Enviar mensagem"/>
-        </Mensagem>
+            <button onClick={() => setIsModalVisible(true)}> Envie sua mensagem. </button>
+            {isModalVisible ? (
+                <Modal onClose={() => setIsModalVisible(false)}>
+                    <Mensagem
+                        onSubmit={SendEmail}>
+                        <input type='text' name="remetente" placeholder="Nome"
+                            onChange={(e) => { setRemetente(e.target.value); }} value={remetente} />
+                        <input type='email' placeholder="Email" name="remetenteEmail"
+                            onChange={(e) => { setRemetenteEmail(e.target.value); }} value={remetenteEmail} />
+                        <textarea rows="3" cols="40" name="mensagem" placeholder="Escreva sua mensagem"
+                            onChange={(e) => { setMensagem(e.target.value); }} value={mensagem} />
+                        <input
+                            type='submit' value="Enviar mensagem" />
+                    </Mensagem>
 
-            </Modal>
-          ):null}
+                </Modal>
+            ) : null}
 
-          
+
 
         </Conteiner>
     )

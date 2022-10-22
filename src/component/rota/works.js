@@ -2,27 +2,94 @@ import React from "react";
 import styled from "styled-components";
 import Carousel from "nuka-carousel/lib/carousel";
 import Crespos from "../../Foto/Crespos.jpg";
-import LuaVideo from "../../Foto/LuaVideo.jpg";
-import ToDo from "../../Foto/ToDo.png"
+import LuaVideo from "../../Foto/LuaVideo.png";
+import ToDo from "../../Foto/ToDo.png";
+import LoL from "../../Foto/LoL.jpg";
+import ODS from "../../Foto/ODS.jpg";
+
 
 const Container = styled(Carousel)`
   border: none;
-  margin-top: 20vh;
+  margin-top: 10vh;
 `
-const Work = styled.div`
- 
-
-button{
-  width: 102%;
-  background-color: purple;
-}
+const WorkLV = styled.div`
+  &::before{
+   content: "LuaVideo- Projeto inspirado no design do PrimeVideo, utilizando API pública de filmes e séries";
+   position: relative;
+   top:17vw;
+ }
 `;
+const WorkC = styled.div`
+ &::before{
+   content: "Crespos- Projeto para desenvolvimento de habilidade em CSS com enfase no media query";
+   position: relative;
+   top:17vw;
+ }`
+const WorkLoL = styled.div`
+position: relative;
+top: 2vw;
+ &::before{
+   content: "Página do LoL- Projeto para a iniciação ao JavaScript.";
+   position: relative;
+   top:17vw;
+ }`
+const WorkTD = styled.div`
+ &::before{
+   content: "To Do App- Projeto para fazer To Do List em forma de aplicativo com componente de função.";
+   position: relative;
+   top:17vw;
+ }`
+const WorkODS = styled.div`
+position: relative;
+top: -1vw;
+ &::before{
+   content: "ODS- Projeto voltado a percepção social de onde mora, juntando o conhecimento de código com o conhecimento de mundo.";
+   position: relative;
+   top:17vw;
+ }`
+
+const Button = styled.button`
+  width: 102%;
+  height: 3.4vw;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2vw;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  border: 2px solid #4433ff;
+  background: #4433ff;
+
+  &:hover{
+  cursor: pointer;
+  background: #fff;
+  color: #4433ff
+  }
+`
 
 const Photo = styled.img`
   width: 100%;
   height: 90%;
   border: solid;
-`;
+ position: relative;
+ z-index: 1;
+  &:hover{
+   animation: slideUp 8s  ease-in-out 1 ; 
+
+@keyframes slideUp {
+  0% {
+    transform-origin: 0 0;
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform-origin: 0 0;
+    transform: translateY(-100%);
+  }
+}
+  }
+  
+`
+;
 
 const Works = () => {
   const settings = {
@@ -60,27 +127,43 @@ const Works = () => {
 
   return (
     <Container {...settings}>
-      <Work>
+      <WorkC>
       <Photo
          src={Crespos}
-        alt="hhttps://luanascorreia.github.io/Projeto-Final---Crespos/" /> 
-      <button>Crespos</button>
-</Work>
+        alt="https://luanascorreia.github.io/Projeto-Final---Crespos/" /> 
+      <a href="https://luanascorreia.github.io/Projeto-Final---Crespos/" target="_blanck"> 
+     <Button>Crespos</Button></a>
+</WorkC>
 
-      <Work>
-      <Photo
+      <WorkLV>
+      <Photo 
         src={LuaVideo}
-        alt=""
+        alt="https://luavideo.vercel.app/"
       />
-      <button>LuaVideo</button>
-</Work>
-<Work>
+      <a href="https://luavideo.vercel.app/" target="_blank"><Button>LuaVideo</Button></a>
+</WorkLV>
+<WorkTD>
       <Photo
         src={ToDo}
-        alt=""
+        alt="https://todo-gules-ten.vercel.app/"
       />
-      <button>To Do List</button>
-</Work>
+      <a href="https://todo-gules-ten.vercel.app/" target="_blank"><Button>To Do List</Button></a>
+</WorkTD>
+<WorkLoL>
+      <Photo
+        src={LoL}
+        alt="https://luanascorreia.github.io/Login-LoL/"
+      />
+      <a href="https://luanascorreia.github.io/Login-LoL/" target="_blank"><Button>Página do LoL</Button></a>
+</WorkLoL>
+<WorkODS>
+  <Photo
+        src={ODS}
+        alt="https://ods-nine.vercel.app/"
+      /> 
+     <a href="https://ods-nine.vercel.app/" target="_blanck"><Button>ODS</Button> </a> 
+      
+</WorkODS>
      
     </Container>
   );
