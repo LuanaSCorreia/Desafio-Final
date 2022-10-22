@@ -26,10 +26,8 @@ const WorkC = styled.div`
    top:17vw;
  }`
 const WorkLoL = styled.div`
-position: relative;
-top: 2vw;
  &::before{
-   content: "Página do LoL- Projeto para a iniciação ao JavaScript.";
+   content: "Página do LoL- Projeto com design do jogo LoL para a iniciação ao JavaScript.";
    position: relative;
    top:17vw;
  }`
@@ -40,10 +38,8 @@ const WorkTD = styled.div`
    top:17vw;
  }`
 const WorkODS = styled.div`
-position: relative;
-top: -1vw;
  &::before{
-   content: "ODS- Projeto voltado a percepção social de onde mora, juntando o conhecimento de código com o conhecimento de mundo.";
+   content: "ODS- Projeto que junta o conhecimento de código com o conhecimento de mundo.";
    position: relative;
    top:17vw;
  }`
@@ -88,8 +84,7 @@ const Photo = styled.img`
 }
   }
   
-`
-;
+`;
 
 const Works = () => {
   const settings = {

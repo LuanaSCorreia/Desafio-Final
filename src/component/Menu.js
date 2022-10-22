@@ -15,9 +15,31 @@ const Menu = styled.section`
 display: flex;
 justify-content: flex-end;
 
+@media (max-width:600px) {
+  position: fixed;
+  bottom: 0;
+  width: 99vw; 
+  li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21.5vw;
+    height: 12vw;
+    font-size: 0px;
+    background-color: aliceblue;
+  border:0.5px solid;
+  }
+img{
+  width: 6vw;
+}
+}
+
 nav{
   width: 50%;
 display: flex;
+@media (max-width:600px){
+  width: 100%;
+}
 }
 
 ul{
@@ -30,13 +52,17 @@ ul{
   font-style: oblique;
   font-size: 1.8vw;
 }
+  
 `
 
 const Section = styled.section`
 background-color: aliceblue;
 width: 100%;
 height: 20vh;
-margin: 0;
+@media (max-width:600px){
+  background-color: white;
+
+}
 `
 
 function Header() {
@@ -47,10 +73,14 @@ function Header() {
         <Menu>
           <nav>
             <ul>
-              <li> <S.Menu to="/"> <img src={HomeIcon}/> Home </S.Menu> </li>
-              <li> <S.Menu to="/perfil"><img src={perfilIcon}/> Sobre </S.Menu> </li>
-              <li> <S.Menu to="/works"><img src={workIcon}/>Trabalhos </S.Menu> </li>
-              <li> <S.Menu to="/contato"><img src={contatoIcon}/> Contatos </S.Menu> </li>
+              <li> <S.Menu to="/">
+                 <img src={HomeIcon}/>  Home </S.Menu> </li>
+              <li> <S.Menu to="/perfil">
+                <img src={perfilIcon}/> Sobre </S.Menu> </li>
+              <li> <S.Menu to="/works">
+                <img src={workIcon}/>Trabalhos </S.Menu> </li>
+              <li> <S.Menu to="/contato">
+                <img src={contatoIcon}/> Contatos </S.Menu> </li>
             </ul>
           </nav>
         </Menu>
