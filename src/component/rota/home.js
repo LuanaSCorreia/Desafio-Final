@@ -2,14 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Luana from "../../Foto/LuanaCorreia.png";
 import Background from "../../Foto/Background.webp";
+import BGMobile from '../../Foto/Background.png';
 
 
 const Section = styled.section`
 background-image: url(${Background});
 background-repeat: no-repeat;
-background-size: 100%;
+background-size: 100vw;
 width: 100%;
-height: 90vh;
+height: 100vh;
 display: flex;
 justify-content: space-around;
 align-items: center;
@@ -23,6 +24,10 @@ h1{
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;
     font-size: 2vw;
+  }
+
+  img{
+    width: 21vw;
   }
 
 p{
@@ -52,24 +57,23 @@ p{
         border-right-color:transparent ;
     }
 }
+@media (max-width:800px) {
+  background-image: url(${BGMobile});
+  img{
+    width: 40vw;
+  }
+}
 `
-const Foto = styled.img`
-width: 21vw;
 
-`
 function Home() {
   return (
-
     <Section>
-   <Foto src={Luana} alt="Luana"/>
+   <img src={Luana} alt="Luana"/>
    <div>
      <h1>Olá! Sou Luana Correia.</h1>
      <p>Bem Vindos ao meu site!</p>
    </div>
     </Section>
-
-  
-   
   );
 }
 

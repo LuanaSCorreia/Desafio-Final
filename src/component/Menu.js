@@ -15,31 +15,9 @@ const Menu = styled.section`
 display: flex;
 justify-content: flex-end;
 
-@media (max-width:600px) {
-  position: fixed;
-  bottom: 0;
-  width: 99vw; 
-  li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 21.5vw;
-    height: 12vw;
-    font-size: 0px;
-    background-color: aliceblue;
-  border:0.5px solid;
-  }
-img{
-  width: 6vw;
-}
-}
-
 nav{
   width: 50%;
 display: flex;
-@media (max-width:600px){
-  width: 100%;
-}
 }
 
 ul{
@@ -52,7 +30,34 @@ ul{
   font-style: oblique;
   font-size: 1.8vw;
 }
+@media (max-width:600px) {
+  position: fixed;
+  bottom: 0;
+  width: 99vw; 
+  background-color: aliceblue;
+  li{
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 22vw;
+    height: 17vw;
+    background-color: aliceblue;
+    &:hover{
+    background-color: blue;
+    border-radius: 40%;
+  }
+    }
+img{
+  width: 6vw;
   
+}
+nav{
+  width: 100%;
+  border-top: solid;
+}
+} 
 `
 
 const Section = styled.section`
@@ -61,7 +66,7 @@ width: 100%;
 height: 20vh;
 @media (max-width:600px){
   background-color: white;
-
+  height: 0;
 }
 `
 

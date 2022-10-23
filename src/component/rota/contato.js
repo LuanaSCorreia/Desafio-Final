@@ -11,9 +11,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
-width: 90%;
+width: 100%;
 height: 70vh;
-
 div{
 display: flex;
 justify-content: space-around;
@@ -44,6 +43,24 @@ button{
         box-shadow: 3px 3px 30px #686FFD;
     }
 }
+@media (max-width: 600px) {
+    flex-direction: row-reverse;
+    height: 87vh;
+    background-color: aliceblue;
+    div{
+        flex-direction: column;
+        width: 50vw;
+        height: 90vh;
+        align-items: flex-end;
+    }
+    img{
+        width: 13vw;
+    }
+    button{
+        height: 17vw;
+       font-size: 3vw;
+    }
+}
 `
 const Mensagem = styled.form`
 width: 35vw;
@@ -57,7 +74,39 @@ box-shadow:  20px 20px 60px #bebebe,
 input{
 height: 2.4vw;
 }
+@media (max-width:600px) {
+  width: 70vw;
+  height: 50vw;
+  input{
+      width: 44vw;
+      height: 8vw;
+  }
+}
 `
+
+const Submit = styled.input`
+  width: 11vw;
+  height: 2vw;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 5px;
+  border: none;
+  background: #343a40;
+  box-shadow: 0 5px #212529;
+
+&:hover {
+  box-shadow: 0 3px #212529;
+  top: 1px;
+}
+
+@media (max-width:600px) {
+   
+}
+`
+
 function Contato() {
     const [remetente, setRemetente] = useState('');
     const [remetenteEmail, setRemetenteEmail] = useState('');
@@ -114,7 +163,7 @@ function Contato() {
                             onChange={(e) => { setRemetenteEmail(e.target.value); }} value={remetenteEmail} />
                         <textarea rows="3" cols="40" name="mensagem" placeholder="Escreva sua mensagem"
                             onChange={(e) => { setMensagem(e.target.value); }} value={mensagem} />
-                        <input
+                        <Submit
                             type='submit' value="Enviar mensagem" />
                     </Mensagem>
 

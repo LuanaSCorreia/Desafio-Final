@@ -7,45 +7,67 @@ import ToDo from "../../Foto/ToDo.png";
 import LoL from "../../Foto/LoL.jpg";
 import ODS from "../../Foto/ODS.jpg";
 
-
 const Container = styled(Carousel)`
-  border: none;
   margin-top: 10vh;
+  @media (max-width:600px) {
+    margin-top: 0;
+  }
 `
 const WorkLV = styled.div`
+width: 43vw;
   &::before{
-   content: "LuaVideo- Projeto inspirado no design do PrimeVideo, utilizando API pública de filmes e séries";
+   content: "LuaVideo- Projeto inspirado no design do PrimeVideo, utilizando uma API pública.";
    position: relative;
-   top:17vw;
+   top:25vw;
+   @media (max-width:600px) {
+    top:97vw ;
+  }
  }
 `;
 const WorkC = styled.div`
+width: 43vw;
  &::before{
    content: "Crespos- Projeto para desenvolvimento de habilidade em CSS com enfase no media query";
    position: relative;
-   top:17vw;
+   top:25vw;
+   @media (max-width:600px) {
+    top:97vw ;
+  }
  }`
 const WorkLoL = styled.div`
+width: 43vw;
  &::before{
    content: "Página do LoL- Projeto com design do jogo LoL para a iniciação ao JavaScript.";
    position: relative;
-   top:17vw;
+   top:25vw;
+   @media (max-width:600px) {
+    top:97vw ;
+  }
  }`
 const WorkTD = styled.div`
+width: 43vw;
  &::before{
-   content: "To Do App- Projeto para fazer To Do List em forma de aplicativo com componente de função.";
+   content: "To Do App- Projeto para fazer To Do List em forma de aplicativo com function.";
    position: relative;
-   top:17vw;
- }`
+   top:25vw;
+ @media (max-width:600px) {
+    top:97vw ;
+  }
+}
+ `
 const WorkODS = styled.div`
+width: 43vw;
  &::before{
-   content: "ODS- Projeto que junta o conhecimento de código com o conhecimento de mundo.";
+   content: "ODS- Projeto que junta o conhecimento de código com questões sociais.";
    position: relative;
-   top:17vw;
+   top:25vw;
+   @media (max-width:600px) {
+    top:97vw ;
+  }
  }`
 
 const Button = styled.button`
-  width: 102%;
+  width: 101%;
   height: 3.4vw;
   color: #fff;
   font-weight: bold;
@@ -60,14 +82,19 @@ const Button = styled.button`
   background: #fff;
   color: #4433ff
   }
+  @media (max-width:600px) {
+    height: 6vw;
+    font-size: 2.8vw;
+  }
 `
 
 const Photo = styled.img`
   width: 100%;
-  height: 90%;
+  height: 57vh;
   border: solid;
  position: relative;
  z-index: 1;
+ object-fit: cover;
   &:hover{
    animation: slideUp 8s  ease-in-out 1 ; 
 
@@ -86,13 +113,14 @@ const Photo = styled.img`
   
 `;
 
+
 const Works = () => {
   const settings = {
     dots: true,
     wrapAround: true,
     pauseOnHover: true,
     autoplay: false,
-    slidesToShow: 3,
+    slidesToShow: 2,
     speed: 900,
     cellAlign: "center",
     cellSpacing: 50,
@@ -111,7 +139,7 @@ const Works = () => {
         top:"8vh",
       },
       nextButtonStyle: {
-        backgroundColor: "#f00"
+        backgroundColor: "#f00",
       },
       prevButtonStyle: {
         color: "white",
@@ -159,7 +187,6 @@ const Works = () => {
      <a href="https://ods-nine.vercel.app/" target="_blanck"><Button>ODS</Button> </a> 
       
 </WorkODS>
-     
     </Container>
   );
 };

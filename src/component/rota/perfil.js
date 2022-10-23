@@ -6,8 +6,10 @@ import Front from "../../Foto/Front.jpg";
 
 const Body = styled.body`
 background-color: aliceblue;
+height: 100vh;
 h1{
   margin: 0 0 2.5vw 5vw;
+  padding-top:2vw ;
 }
 `
 const Section = styled.section`
@@ -36,6 +38,14 @@ img{
   height: 11vw;
   border: solid;
   object-fit: cover;
+}
+@media (max-width:600px) {
+  height: 20vh;
+  font-size: 2.2vw;
+  img{
+    width: 15vw;
+    height: 17vw;
+  }
 }
 `
 function Perfil() {
