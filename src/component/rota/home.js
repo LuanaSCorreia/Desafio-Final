@@ -10,7 +10,7 @@ background-image: url(${Background});
 background-repeat: no-repeat;
 background-size: 100vw;
 width: 100%;
-height: 100vh;
+height: 95vh;
 display: flex;
 justify-content: space-around;
 align-items: center;
@@ -19,11 +19,14 @@ div{
 }
 h1{
     border-right: 2px solid;
-    animation:pisca 500ms steps(40) infinite normal, digitando 4s steps(40) .1s normal both;
+    animation:pisca 500ms steps(40) 4s normal, digitando 3s steps(40) .1s normal both;
     white-space: nowrap;
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;
     font-size: 2vw;
+    @media (max-width:600px) {
+     font-size:2.6vw;
+    }
   }
 
   img{
@@ -32,11 +35,14 @@ h1{
 
 p{
   border-right: 2px solid;
-    animation:pisca 500ms steps(40) infinite normal, digitando 5s steps(40) 5s normal both;
+    animation:pisca 500ms steps(40) 4s infinite normal, digitando 3s steps(40) 4s normal both;
     white-space: nowrap;
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;
     font-size: 1.6vw;
+    @media (max-width:600px) {
+     font-size:2.2vw;
+    }
 }
 
 @keyframes digitando{

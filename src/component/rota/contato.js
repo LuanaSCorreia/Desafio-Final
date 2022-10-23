@@ -13,6 +13,7 @@ align-items: center;
 justify-content: space-around;
 width: 100%;
 height: 70vh;
+
 div{
 display: flex;
 justify-content: space-around;
@@ -24,7 +25,6 @@ width: 4vw;
 gap: 5vw;
     &:hover{
 cursor: pointer;
-width: 4.5vw;
 }
 }
 
@@ -76,9 +76,9 @@ height: 2.4vw;
 }
 @media (max-width:600px) {
   width: 70vw;
-  height: 50vw;
+  height: 60vw;
   input{
-      width: 44vw;
+      width: 40vw;
       height: 8vw;
   }
 }
@@ -161,7 +161,7 @@ function Contato() {
                             onChange={(e) => { setRemetente(e.target.value); }} value={remetente} />
                         <input type='email' placeholder="Email" name="remetenteEmail"
                             onChange={(e) => { setRemetenteEmail(e.target.value); }} value={remetenteEmail} />
-                        <textarea rows="3" cols="40" name="mensagem" placeholder="Escreva sua mensagem"
+                        <textarea rows="3" cols="30" name="mensagem" placeholder="Escreva sua mensagem"
                             onChange={(e) => { setMensagem(e.target.value); }} value={mensagem} />
                         <Submit
                             type='submit' value="Enviar mensagem" />

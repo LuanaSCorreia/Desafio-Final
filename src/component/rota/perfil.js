@@ -9,7 +9,7 @@ background-color: aliceblue;
 height: 100vh;
 h1{
   margin: 0 0 2.5vw 5vw;
-  padding-top:2vw ;
+  padding-top:5vh ;
 }
 `
 const Section = styled.section`
